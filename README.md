@@ -10,7 +10,7 @@ hospedagem (Vercel, Netlify, GitHub Pages). Não precisa de servidor.
 
 ## ✅ O que já está pronto
 
-- Capa com monograma **P & M** e a data
+- Capa com o **monograma da identidade visual** (redesenhado em SVG, em `img/monograma.svg`) e a data
 - Foto do casal na abertura
 - Frase de Van Gogh: *“O amor é algo eterno. O aspecto pode mudar, mas não a essência.”*
 - Data, horário (15h) e local, com botão **Ver no mapa** (cerimônia e recepção no mesmo endereço)
@@ -101,6 +101,16 @@ fonts/Moontime.woff2      (ou fonts/Moontime.ttf)
 Ela é aplicada automaticamente no monograma e nos títulos — sem mexer em nada.
 
 ---
+
+## 🔖 Monograma
+
+O monograma foi redesenhado como vetor a partir da identidade visual e está
+embutido no `index.html` (aparece na capa, na abertura e no rodapé). Ele também
+existe solto em `img/monograma.svg`, caso queiram usar em papelaria, adesivos
+ou no Instagram — é vetor, então amplia sem perder qualidade.
+
+Para trocar por outro arquivo, basta substituir os `<path>` do símbolo
+`ic-mono`, no topo do `<body>` do `index.html`.
 
 ## 🎨 Paleta
 

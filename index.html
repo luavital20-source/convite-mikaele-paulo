@@ -53,13 +53,12 @@
   }
   img{display:block;max-width:100%;}
 
-  /* ───────── MONOGRAMA (P M em script) ───────── */
+  /* ───────── MONOGRAMA (traçado da identidade) ───────── */
   .mono{
-    display:block;font-family:var(--script);color:var(--mc,var(--brown));
-    line-height:.9;letter-spacing:-.06em;font-size:var(--ms,56px);
-    text-align:center;user-select:none;
+    display:block;margin-left:auto;margin-right:auto;
+    color:var(--mc,var(--brown));
+    width:var(--ms,72px);height:auto;aspect-ratio:495/672;
   }
-  .mono .amp-mono{font-size:.5em;opacity:.6;padding:0 .04em;vertical-align:.18em;}
 
   /* ───────── TIPOS ───────── */
   .names{
@@ -96,7 +95,7 @@
   #splash::after{content:'';position:absolute;inset:0;background-image:url('img/textura.jpg');background-size:cover;opacity:.5;mix-blend-mode:multiply;pointer-events:none;}
   #splash.hide{opacity:0;pointer-events:none;transform:scale(1.04);}
   .splash-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;padding:0 24px;}
-  .splash-mono{--ms:clamp(86px,26vw,120px);opacity:0;animation:fadeUp 1s .15s forwards;}
+  .splash-mono{--ms:clamp(84px,24vw,112px);opacity:0;animation:fadeUp 1s .15s forwards;}
   .splash-names{
     font-size:clamp(15px,5vw,24px);margin-top:18px;text-align:center;
     opacity:0;animation:fadeUp 1s .55s forwards;
@@ -130,7 +129,7 @@
   }
   .hero-cap{position:relative;z-index:2;text-align:center;padding:0 28px;margin-top:-78px;}
   .hero-script{font-family:var(--script);font-size:clamp(26px,8vw,34px);color:var(--terra);line-height:1;margin-bottom:6px;}
-  .hero-mono{--ms:clamp(62px,17vw,78px);margin-bottom:10px;}
+  .hero-mono{--ms:clamp(56px,15vw,68px);margin-bottom:14px;}
   .hero-names{font-size:clamp(16px,5.4vw,26px);}
   .hero-sub{margin-top:18px;font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--terra);text-indent:.36em;}
   .hero-scroll{display:block;margin:28px auto 0;width:1px;height:44px;background:linear-gradient(var(--terra),transparent);}
@@ -324,7 +323,7 @@
 
   /* ───────── RODAPÉ ───────── */
   footer{padding:56px 30px 44px;text-align:center;}
-  .footer-mono{--ms:64px;--mc:var(--brown);margin-bottom:18px;}
+  .footer-mono{--ms:56px;--mc:var(--brown);margin-bottom:20px;}
   .footer-names{font-size:14px;}
   .footer-date{margin-top:14px;font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--terra);text-indent:.4em;}
   .footer-note{margin-top:18px;font-size:22px;color:var(--ink-soft);font-family:var(--script);line-height:1.2;}
@@ -361,6 +360,14 @@
 <!-- ════════ SVG: símbolos reaproveitados ════════ -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
+    <!-- monograma P&M (traçado da identidade visual) -->
+    <symbol id="ic-mono" viewBox="0 0 495 672">
+      <g transform="translate(-625,-340)" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M648 876 C658 818 690 724 735 648 C796 588 878 508 934 448 C968 412 960 366 912 368 C874 370 852 400 840 428 C812 486 776 538 754 588 C742 612 733 632 730 648 C726 730 722 850 723 986"/>
+        <path d="M646 654 C684 648 722 642 764 634"/>
+        <path d="M720 950 C738 884 766 792 786 736 C794 712 806 694 816 696 C828 698 826 726 828 752 C832 800 832 822 844 848 C854 874 876 878 890 852 C902 828 908 786 914 748 C918 720 928 700 938 702 C950 704 946 734 948 760 C952 806 952 826 966 850 C976 874 998 878 1012 854 C1028 828 1054 816 1098 822"/>
+      </g>
+    </symbol>
     <!-- ramo de folhas (arabesco da identidade) -->
     <symbol id="ic-ramo" viewBox="0 0 120 320">
       <g fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
@@ -408,7 +415,7 @@
   <span class="sprig" style="width:92px;height:244px;bottom:-32px;right:-10px;transform:rotate(168deg)"><svg><use href="#ic-ramo"/></svg></span>
   <span class="sprig" style="width:62px;height:62px;top:14%;right:10%;opacity:.2"><svg><use href="#ic-flor"/></svg></span>
   <div class="splash-inner">
-    <p class="mono splash-mono" id="splashMono"></p>
+    <svg class="mono splash-mono" viewBox="0 0 495 672" role="img" aria-label="Monograma Paulo e Mikaele"><use href="#ic-mono"/></svg>
     <h1 class="names splash-names" id="splashNames"></h1>
     <p class="splash-date" id="splashDate"></p>
   </div>
@@ -425,7 +432,7 @@
       <img src="img/casal.jpg" alt="Paulo e Mikaele" id="fotoCasal">
     </div>
     <div class="hero-cap">
-      <p class="mono hero-mono" id="heroMono"></p>
+      <svg class="mono hero-mono" viewBox="0 0 495 672" role="img" aria-label="Monograma Paulo e Mikaele"><use href="#ic-mono"/></svg>
       <h2 class="names hero-names" id="heroNames"></h2>
       <p class="hero-sub" id="heroSub"></p>
       <span class="hero-scroll"></span>
@@ -649,7 +656,7 @@
 
   <!-- RODAPÉ -->
   <footer>
-    <p class="mono footer-mono" id="footerMono"></p>
+    <svg class="mono footer-mono" viewBox="0 0 495 672" role="img" aria-label="Monograma Paulo e Mikaele"><use href="#ic-mono"/></svg>
     <p class="names footer-names" id="footerNames"></p>
     <p class="footer-date" id="footerDate"></p>
     <p class="footer-note" id="footerNote"></p>
@@ -698,7 +705,6 @@
    ════════════════════════════════════════════════════════════ */
 const CONFIG = {
   noivos:     'Paulo & Mikaele',
-  monograma:  'PM',                       // usado no monograma em script
   cidade:     'Fortaleza · Ceará',
 
   dataEvento: '2026-11-14T15:00:00',      // contagem regressiva (ISO)
@@ -769,13 +775,6 @@ function namesHTML(s){
   const p = s.split(/\s*&\s*/);
   return p.length===2 ? p[0]+' <span class="amp">&amp;</span> '+p[1] : s;
 }
-function monoHTML(s){
-  const l = String(s||'').replace(/[^A-Za-zÀ-ÿ]/g,'').split('');
-  return l.length===2 ? l[0]+'<span class="amp-mono">&amp;</span>'+l[1] : s;
-}
-txt('splashMono',monoHTML(CONFIG.monograma));
-txt('heroMono',  monoHTML(CONFIG.monograma));
-txt('footerMono',monoHTML(CONFIG.monograma));
 txt('splashNames',namesHTML(CONFIG.noivos));
 txt('heroNames',  namesHTML(CONFIG.noivos));
 txt('footerNames',namesHTML(CONFIG.noivos));
