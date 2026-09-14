@@ -53,11 +53,10 @@
   }
   img{display:block;max-width:100%;}
 
-  /* ───────── MONOGRAMA (traçado da identidade) ───────── */
+  /* ───────── MONOGRAMA (arquivo da identidade visual) ───────── */
   .mono{
     display:block;margin-left:auto;margin-right:auto;
-    color:var(--mc,var(--brown));
-    width:var(--ms,72px);height:auto;aspect-ratio:495/672;
+    width:var(--ms,72px);height:auto;aspect-ratio:479/638;
   }
 
   /* ───────── TIPOS ───────── */
@@ -360,14 +359,6 @@
 <!-- ════════ SVG: símbolos reaproveitados ════════ -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <!-- monograma P&M (traçado da identidade visual) -->
-    <symbol id="ic-mono" viewBox="0 0 495 672">
-      <g transform="translate(-625,-340)" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M648 876 C658 818 690 724 735 648 C796 588 878 508 934 448 C968 412 960 366 912 368 C874 370 852 400 840 428 C812 486 776 538 754 588 C742 612 733 632 730 648 C726 730 722 850 723 986"/>
-        <path d="M646 654 C684 648 722 642 764 634"/>
-        <path d="M720 950 C738 884 766 792 786 736 C794 712 806 694 816 696 C828 698 826 726 828 752 C832 800 832 822 844 848 C854 874 876 878 890 852 C902 828 908 786 914 748 C918 720 928 700 938 702 C950 704 946 734 948 760 C952 806 952 826 966 850 C976 874 998 878 1012 854 C1028 828 1054 816 1098 822"/>
-      </g>
-    </symbol>
     <!-- ramo de folhas (arabesco da identidade) -->
     <symbol id="ic-ramo" viewBox="0 0 120 320">
       <g fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
@@ -415,7 +406,7 @@
   <span class="sprig" style="width:92px;height:244px;bottom:-32px;right:-10px;transform:rotate(168deg)"><svg><use href="#ic-ramo"/></svg></span>
   <span class="sprig" style="width:62px;height:62px;top:14%;right:10%;opacity:.2"><svg><use href="#ic-flor"/></svg></span>
   <div class="splash-inner">
-    <svg class="mono splash-mono" viewBox="0 0 495 672" role="img" aria-label="Monograma Paulo e Mikaele"><use href="#ic-mono"/></svg>
+    <img class="mono splash-mono" src="img/monograma.png" alt="Monograma Paulo e Mikaele">
     <h1 class="names splash-names" id="splashNames"></h1>
     <p class="splash-date" id="splashDate"></p>
   </div>
@@ -429,10 +420,10 @@
   <!-- CAPA COM FOTO -->
   <section class="hero">
     <div class="hero-photo">
-      <img src="img/casal.jpg" alt="Paulo e Mikaele" id="fotoCasal">
+      <img src="img/casal.jpeg" alt="Paulo e Mikaele" id="fotoCasal">
     </div>
     <div class="hero-cap">
-      <svg class="mono hero-mono" viewBox="0 0 495 672" role="img" aria-label="Monograma Paulo e Mikaele"><use href="#ic-mono"/></svg>
+      <img class="mono hero-mono" src="img/monograma.png" alt="Monograma Paulo e Mikaele">
       <h2 class="names hero-names" id="heroNames"></h2>
       <p class="hero-sub" id="heroSub"></p>
       <span class="hero-scroll"></span>
@@ -473,7 +464,7 @@
 
       <!-- Cerimônia -->
       <div class="place reveal">
-        <div class="place-art"><img src="img/local.jpg" alt="Chácara Encanto das Anas" id="fotoLocal"></div>
+        <div class="place-art"><img src="img/chacara.jpeg" alt="Chácara Encanto das Anas" id="fotoLocal"></div>
         <div class="place-body">
           <span class="place-tag">Cerimônia</span>
           <p class="place-time" id="horaCerimonia"></p>
@@ -656,7 +647,7 @@
 
   <!-- RODAPÉ -->
   <footer>
-    <svg class="mono footer-mono" viewBox="0 0 495 672" role="img" aria-label="Monograma Paulo e Mikaele"><use href="#ic-mono"/></svg>
+    <img class="mono footer-mono" src="img/monograma.png" alt="Monograma Paulo e Mikaele">
     <p class="names footer-names" id="footerNames"></p>
     <p class="footer-date" id="footerDate"></p>
     <p class="footer-note" id="footerNote"></p>

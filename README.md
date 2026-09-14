@@ -10,11 +10,11 @@ hospedagem (Vercel, Netlify, GitHub Pages). Não precisa de servidor.
 
 ## ✅ O que já está pronto
 
-- Capa com o **monograma da identidade visual** (redesenhado em SVG, em `img/monograma.svg`) e a data
+- Capa com o **monograma da identidade visual** e a data
 - Foto do casal na abertura
 - Frase de Van Gogh: *“O amor é algo eterno. O aspecto pode mudar, mas não a essência.”*
 - Data, horário (15h) e local, com botão **Ver no mapa** (cerimônia e recepção no mesmo endereço)
-- Foto do local
+- Foto do local (aquarela da cerimônia)
 - Contagem regressiva
 - **Dress code** (social fino, evitar branco, roupas leves e salto baixo ou rasteira) + paleta da decoração
 - **Manual do convidado — Avisos importantes** (5 avisos, incluindo o aviso aos papais)
@@ -24,19 +24,20 @@ hospedagem (Vercel, Netlify, GitHub Pages). Não precisa de servidor.
 
 ---
 
-## 📸 1. Trocar as fotos (importante)
+## 📸 1. Imagens
 
-As duas imagens dentro de `img/` hoje são **fundos provisórios**. Substitua pelos
-arquivos reais, mantendo exatamente os mesmos nomes:
+Todas já estão no lugar, dentro de `img/`:
 
-| Arquivo          | O que é                | Formato ideal              |
-|------------------|------------------------|----------------------------|
-| `img/casal.jpg`  | Foto do casal (capa)   | vertical, ~1000×1400px     |
-| `img/local.jpg`  | Foto da chácara        | horizontal, ~1400×900px    |
+| Arquivo               | Onde aparece                                    |
+|-----------------------|-------------------------------------------------|
+| `casal.jpeg`          | Foto de abertura (capa)                         |
+| `chacara.jpeg`        | Foto do local, na seção da cerimônia            |
+| `monograma.jpeg`      | Arquivo original do monograma (identidade)      |
+| `monograma.png`       | O mesmo monograma sem fundo — é este que o site usa |
+| `textura.jpg`         | Textura de papel do fundo                       |
 
-> `img/textura.jpg` é a textura de papel do fundo — não precisa mexer.
-
----
+Para trocar qualquer uma, basta substituir o arquivo mantendo o mesmo nome.
+Se trocar o `monograma.jpeg`, gere de novo o `monograma.png` sem fundo (ou me peça).
 
 ## ✍️ 2. O que ainda falta preencher
 
@@ -104,13 +105,9 @@ Ela é aplicada automaticamente no monograma e nos títulos — sem mexer em nad
 
 ## 🔖 Monograma
 
-O monograma foi redesenhado como vetor a partir da identidade visual e está
-embutido no `index.html` (aparece na capa, na abertura e no rodapé). Ele também
-existe solto em `img/monograma.svg`, caso queiram usar em papelaria, adesivos
-ou no Instagram — é vetor, então amplia sem perder qualidade.
-
-Para trocar por outro arquivo, basta substituir os `<path>` do símbolo
-`ic-mono`, no topo do `<body>` do `index.html`.
+O site usa o monograma da identidade visual de vocês (`img/monograma.png`),
+que é o `monograma.jpeg` com o fundo removido para assentar sobre a textura
+de papel. Ele aparece na capa, na abertura e no rodapé.
 
 ## 🎨 Paleta
 
