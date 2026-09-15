@@ -39,44 +39,45 @@ Todas já estão no lugar, dentro de `img/`:
 Para trocar qualquer uma, basta substituir o arquivo mantendo o mesmo nome.
 Se trocar o `monograma.jpeg`, gere de novo o `monograma.png` sem fundo (ou me peça).
 
-## ✍️ 2. O que ainda falta preencher
+## ✍️ 2. Pagamentos e confirmação de presença
 
-Tudo fica no bloco `CONFIG`, logo no início do `<script>` do `index.html`.
-Enquanto esses campos estiverem vazios, as seções correspondentes **ficam escondidas**
-(o convite não fica “quebrado”).
+Tudo já configurado no bloco `CONFIG`, no início do `<script>` do `index.html`.
 
-### Confirmação de presença (RSVP)
+### Confirmação de presença
 ```js
-whatsapp: '',   // ex.: '5585999998888'  (DDI + DDD + número, só dígitos)
+whatsapp: '5585985345493',
 ```
-Preenchendo, aparece a seção **“Você vem?”** com o botão que abre o WhatsApp
-já com a mensagem pronta.
+O botão da seção "Você vem?" abre o WhatsApp com a mensagem já escrita.
 
-### Lista de presentes — **falta a chave Pix**
-
-As 20 cotas já estão cadastradas no `index.html`, com nome e valor. O que falta
-é a chave Pix que vai receber:
-
+### Presentes — Pix
 ```js
-pixChave:   '',            // CPF, celular, e-mail ou chave aleatória
-pixTitular: 'Paulo e Mikaele',
-pixBanco:   '',            // opcional, só aparece no rodapé do pop-up
+pixChave:   '85cbe5d2-801c-4e18-80de-b8f43a861338',   // chave aleatória
+pixTitular: 'Mikaele dos Santos',
+pixBanco:   'InfinitePay',
+pixCidade:  'Fortaleza',
 ```
+O botão **Pix** de cada cota abre um pop-up com o código **copia e cola** já com
+o valor daquela cota. Funciona sem servidor.
 
-Enquanto a chave estiver vazia, os cards aparecem com nome e valor, mas **sem o
-botão "Presentear"** — ninguém vê um botão que não funciona. Assim que preencher,
-cada card ganha um Pix **copia e cola** com o valor daquela cota já embutido.
+### Presentes — Cartão (InfinitePay)
+```js
+infinitepayHandle: 'mikaele-santos-o49',   // a InfiniteTag, sem o "$"
+```
+O botão **Cartão** chama `https://api.checkout.infinitepay.io/links`, que cria o
+link de pagamento com o valor da cota e leva o convidado direto para o checkout.
+Depois de pagar, ele volta para o convite com `?presente=ok` e vê um "Obrigado!".
+
+> ⚠️ **Exige "Checkout externo / integrado" ligado** na conta InfinitePay.
+> Sem isso a API recusa a chamada. Se o botão der erro, o aviso na tela mostra a
+> resposta da InfinitePay e a InfiniteTag usada — é por aí que se descobre o motivo.
+>
+> Para desligar o cartão e deixar só o Pix, basta apagar o valor de
+> `infinitepayHandle`.
 
 As **fotos das 20 cotas já estão no lugar**, em `img/presentes/01.jpg` … `20.jpg`.
 O `LEIA-ME.md` de lá lista qual número é qual presente. Para trocar alguma, é só
 substituir o arquivo mantendo o número — a extensão tanto faz (`.jpg`, `.jpeg`,
 `.png`, `.webp`). Card sem foto mostra um fundo da paleta, nada quebra.
-
-Se preferir, dá para usar também um link de lista externa:
-
-```js
-listaLink: '',   // aparece como botão "Ver lista de presentes"
-```
 
 ---
 
