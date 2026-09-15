@@ -1,34 +1,36 @@
 # Fotos das cotas
 
-Coloque aqui uma foto para cada presente, numeradas na **mesma ordem da lista**
-que está no `index.html`:
+Cada presente tem a sua foto, numerada na **mesma ordem da lista** do `index.html`:
 
-| Arquivo | Presente                                              |
-|---------|-------------------------------------------------------|
-| `01`    | Só pra não dizer que não dei nada                     |
-| `02`    | Jogo de panelas moderno                               |
-| `03`    | Cueca para a lua de mel                               |
-| `04`    | Lingerie chique                                       |
-| `05`    | Taxa para a noiva não jogar o buquê na sua namorada   |
-| `06`    | Toma meu bolsa família                                |
-| `07`    | Deus tocou no meu coração e vou dar meu salário todo  |
-| `08`    | Ajude o noivo a alimentar a noiva                     |
-| `09`    | Toma aqui uns 50 reais                                |
-| `10`    | Jogo da vida                                          |
-| `11`    | Ajuda para pagar os 14 meses de aluguel               |
-| `12`    | Playstation que o yude não me deu                     |
-| `13`    | Prioridade na fila do buffet                          |
-| `14`    | Cota para perguntar quando vem os filhos              |
-| `15`    | Cooktop de última geração                             |
-| `16`    | Cobertor para a noiva                                 |
-| `17`    | Curso de culinária                                    |
-| `18`    | Jantar romântico                                      |
-| `19`    | Nome na barra do vestido                              |
-| `20`    | Ir para a lua de mel com os noivos                    |
+| Arquivo  | Presente                                              | Imagem                          |
+|----------|-------------------------------------------------------|---------------------------------|
+| `01.jpg` | Só pra não dizer que não dei nada                     | Julius (Todo Mundo Odeia o Chris) |
+| `02.jpg` | Jogo de panelas moderno                               | Panelinhas de brinquedo         |
+| `03.jpg` | Cueca para a lua de mel                               | Cuecas do Bob Esponja           |
+| `04.jpg` | Lingerie chique                                       | Calcinha gigante de morango     |
+| `05.jpg` | Taxa para a noiva não jogar o buquê na sua namorada   | Noiva jogando o buquê           |
+| `06.jpg` | Toma meu bolsa família                                | Lula                            |
+| `07.jpg` | Deus tocou no meu coração e vou dar meu salário todo  | Braços erguidos na luz          |
+| `08.jpg` | Ajude o noivo a alimentar a noiva                     | Casos de Família — briga de pastel |
+| `09.jpg` | Toma aqui uns 50 reais                                | Nota de 50 "das Mulheres"       |
+| `10.jpg` | Jogo da vida                                          | Meme do Jogo da Vida Eterna     |
+| `11.jpg` | Ajuda para pagar os 14 meses de aluguel               | Seu Barriga                     |
+| `12.jpg` | Playstation que o yude não me deu                     | PlayStation 2                   |
+| `13.jpg` | Prioridade na fila do buffet                          | Fila do buffet                  |
+| `14.jpg` | Cota para perguntar quando vem os filhos              | Criança                         |
+| `15.jpg` | Cooktop de última geração                             | Fogãozinho de brinquedo         |
+| `16.jpg` | Cobertor para a noiva                                 | Manta "coberta de razão"        |
+| `17.jpg` | Curso de culinária                                    | Jacquin                         |
+| `18.jpg` | Jantar romântico                                      | Miojo                           |
+| `19.jpg` | Nome na barra do vestido                              | Nomes bordados na barra         |
+| `20.jpg` | Ir para a lua de mel com os noivos                    | Casal na banheira               |
 
-**A extensão tanto faz**: pode ser `01.jpg`, `01.jpeg`, `01.png` ou `01.webp` —
-o site tenta todas. O que importa é o **número com dois dígitos**.
+## Como trocar uma foto
 
-Formato ideal: quadrada ou vertical (o card recorta em 4:5), a partir de 600px
-de largura. Se faltar alguma foto, o card mostra um fundo da paleta no lugar —
-não quebra nada.
+Substitua o arquivo mantendo o número. A extensão tanto faz (`.jpg`, `.jpeg`,
+`.png`, `.webp`) — o site tenta todas. Card sem foto mostra um fundo da paleta,
+nada quebra.
+
+As imagens foram montadas em **quadrado (1000×1000)**. Quando a original não era
+quadrada, o fundo foi preenchido com uma versão desfocada dela mesma, em vez de
+cortar — assim nenhuma legenda ou piada se perde.

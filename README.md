@@ -67,10 +67,10 @@ Enquanto a chave estiver vazia, os cards aparecem com nome e valor, mas **sem o
 botão "Presentear"** — ninguém vê um botão que não funciona. Assim que preencher,
 cada card ganha um Pix **copia e cola** com o valor daquela cota já embutido.
 
-As **fotos das cotas** vão em `img/presentes/` — veja o `LEIA-ME.md` de lá com a
-tabela de qual número é qual presente. A extensão tanto faz (`.jpg`, `.jpeg`,
-`.png`, `.webp`); o que importa é o número com dois dígitos. Card sem foto mostra
-um fundo da paleta — nada quebra.
+As **fotos das 20 cotas já estão no lugar**, em `img/presentes/01.jpg` … `20.jpg`.
+O `LEIA-ME.md` de lá lista qual número é qual presente. Para trocar alguma, é só
+substituir o arquivo mantendo o número — a extensão tanto faz (`.jpg`, `.jpeg`,
+`.png`, `.webp`). Card sem foto mostra um fundo da paleta, nada quebra.
 
 Se preferir, dá para usar também um link de lista externa:
 
