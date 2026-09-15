@@ -38,6 +38,7 @@
     --sans:'Jost',sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  [hidden]{display:none!important;}
   html{scroll-behavior:smooth;overflow-x:hidden;overscroll-behavior-x:none;}
   body{
     background:var(--paper);
@@ -257,16 +258,16 @@
     border:1px solid var(--line);background:rgba(255,255,255,.6);
     box-shadow:0 6px 18px rgba(120,82,67,.06);transition:transform .4s,box-shadow .4s;}
   .gift-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(120,82,67,.14);}
-  .gift-photo{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--paper-2);}
+  .gift-photo{position:relative;aspect-ratio:4/5;overflow:hidden;background:linear-gradient(152deg,var(--almond) 0%,#F8EFE3 52%,rgba(251,203,114,.55) 100%);}
   .gift-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.6,.2,1);}
   .gift-card:hover .gift-photo img{transform:scale(1.06);}
   .gift-num{position:absolute;top:9px;left:9px;z-index:2;display:inline-flex;align-items:center;justify-content:center;
     min-width:26px;height:26px;padding:0 6px;font-size:11px;color:var(--paper);
     background:rgba(120,82,67,.9);border-radius:20px;letter-spacing:.04em;}
   .gift-body{display:flex;flex-direction:column;flex:1;padding:14px 14px 16px;}
-  .gift-name{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--brown);line-height:1.45;}
-  .gift-sub{font-size:11.5px;line-height:1.6;color:var(--ink-soft);margin-top:7px;flex:1;}
-  .gift-val{font-family:var(--script);font-size:26px;color:var(--terra);margin-top:10px;line-height:1;}
+  .gift-name{font-size:12.5px;line-height:1.55;color:var(--brown);letter-spacing:.01em;flex:1;}
+  .gift-val{font-family:var(--script);font-size:clamp(21px,6vw,26px);color:var(--terra);margin-top:12px;line-height:1;white-space:nowrap;}
+  .gift-val.longo{font-size:clamp(15px,4.4vw,20px);}
   .gift-btns{display:flex;gap:8px;margin-top:14px;}
   .gift-btns button{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:5px;
     font-family:var(--sans);font-size:9.5px;font-weight:300;letter-spacing:.16em;text-transform:uppercase;text-indent:.16em;
@@ -298,7 +299,7 @@
     font-size:17px;line-height:1;cursor:pointer;transition:.3s;}
   .pixm-x:hover{background:var(--brown);color:var(--paper);border-color:var(--brown);}
   .pixm-eyebrow{font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--terra);text-indent:.3em;}
-  .pixm-nome{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--brown);margin-top:12px;line-height:1.5;}
+  .pixm-nome{font-size:14.5px;color:var(--brown);margin-top:12px;line-height:1.55;letter-spacing:.01em;}
   .pixm-valor{font-family:var(--script);font-size:40px;color:var(--terra);margin-top:6px;line-height:1;}
   .pixm-code{margin-top:20px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;
     background:rgba(255,255,255,.7);font-family:var(--sans);font-size:10px;
@@ -746,13 +747,38 @@ const CONFIG = {
 };
 
 /* ════════════════════════════════════════════════════════════
-   🎁  COTAS DA LISTA DE PRESENTES (opcional)
-   Deixe a lista vazia ([]) para não exibir a galeria.
-   Cada item: { id, nome, sub, foto, valor }
-   As fotos ficam em img/presentes/01.jpg, 02.jpg, ...
+   🎁  COTAS DA LISTA DE PRESENTES
+   Cada item: { id, nome, foto, valor }
+
+   FOTOS: em "foto" vai o caminho SEM a extensão. O site tenta
+   sozinho .jpg, .jpeg, .png e .webp — então tanto faz se o arquivo
+   subir como 01.jpg ou 01.jpeg. Se a foto ainda não existir, o card
+   mostra um fundo da paleta no lugar (nada fica quebrado).
+
+   Para trocar a ordem, é só mover as linhas. O número do card
+   (01, 02, ...) segue a ordem da lista; o "id" não muda nada visual.
    ════════════════════════════════════════════════════════════ */
 const PRESENTES = [
-  // { id:1, nome:'Ajuda na lua de mel', sub:'Contribua com a viagem dos sonhos.', foto:'img/presentes/01.jpg', valor:300 },
+  { id:1,  valor:80,     foto:'img/presentes/01', nome:'Só pra não dizer que não dei nada' },
+  { id:2,  valor:250,    foto:'img/presentes/02', nome:'Jogo de panelas moderno' },
+  { id:3,  valor:100,    foto:'img/presentes/03', nome:'Cueca para a lua de mel' },
+  { id:4,  valor:120,    foto:'img/presentes/04', nome:'Lingerie chique' },
+  { id:5,  valor:200,    foto:'img/presentes/05', nome:'Taxa para a noiva não jogar o buquê na sua namorada' },
+  { id:6,  valor:300,    foto:'img/presentes/06', nome:'Toma meu bolsa família' },
+  { id:7,  valor:1621,   foto:'img/presentes/07', nome:'Deus tocou no meu coração e vou dar meu salário todo' },
+  { id:8,  valor:180,    foto:'img/presentes/08', nome:'Ajude o noivo a alimentar a noiva' },
+  { id:9,  valor:50,     foto:'img/presentes/09', nome:'Toma aqui uns 50 reais' },
+  { id:10, valor:140,    foto:'img/presentes/10', nome:'Jogo da vida' },
+  { id:11, valor:250,    foto:'img/presentes/11', nome:'Ajuda para pagar os 14 meses de aluguel' },
+  { id:12, valor:400,    foto:'img/presentes/12', nome:'Playstation que o yude não me deu' },
+  { id:13, valor:220,    foto:'img/presentes/13', nome:'Prioridade na fila do buffet' },
+  { id:14, valor:300,    foto:'img/presentes/14', nome:'Cota para perguntar quando vem os filhos' },
+  { id:15, valor:200,    foto:'img/presentes/15', nome:'Cooktop de última geração' },
+  { id:16, valor:150,    foto:'img/presentes/16', nome:'Cobertor para a noiva' },
+  { id:17, valor:350,    foto:'img/presentes/17', nome:'Curso de culinária' },
+  { id:18, valor:100,    foto:'img/presentes/18', nome:'Jantar romântico' },
+  { id:19, valor:300,    foto:'img/presentes/19', nome:'Nome na barra do vestido' },
+  { id:20, valor:100000, foto:'img/presentes/20', nome:'Ir para a lua de mel com os noivos' },
 ];
 
 /* ════════════════════════════════════════════════════════════
@@ -844,7 +870,7 @@ async function copiar(texto){
 /* ─── Seção de presentes ─── */
 (function initGifts(){
   const sec=$('gifts');
-  const temCotas = Array.isArray(PRESENTES) && PRESENTES.length>0 && !!CONFIG.pixChave;
+  const temCotas = Array.isArray(PRESENTES) && PRESENTES.length>0;
   if(!CONFIG.listaLink && !CONFIG.pixChave && !temCotas){ sec.style.display='none'; return; }
   txt('giftNote', CONFIG.giftTexto);
   if(CONFIG.listaLink){
@@ -869,15 +895,33 @@ async function copiar(texto){
   const grid=$('giftGrid');
   grid.innerHTML=PRESENTES.map((g,i)=>{
     const n=String(i+1).padStart(2,'0');
-    const val=g.valor?'<p class="gift-val">'+brl(g.valor)+'</p>':'';
+    const v=g.valor?brl(g.valor):'';
+    const val=v?'<p class="gift-val'+(v.length>8?' longo':'')+'">'+v+'</p>':'';
+    const btn=CONFIG.pixChave
+      ? '<div class="gift-btns"><button type="button" data-pix="'+g.id+'">'+svgPix+'<span>Presentear</span></button></div>'
+      : '';
     return '<div class="gift-card reveal">'+
-      '<div class="gift-photo"><span class="gift-num">'+n+'</span><img loading="lazy" src="'+esc(g.foto)+'" alt="'+esc(g.nome)+'"></div>'+
+      '<div class="gift-photo"><span class="gift-num">'+n+'</span>'+
+        (g.foto?'<img loading="lazy" alt="'+esc(g.nome)+'" data-base="'+esc(g.foto)+'">':'')+
+      '</div>'+
       '<div class="gift-body">'+
-        '<p class="gift-name">'+g.nome+'</p>'+
-        '<p class="gift-sub">'+(g.sub||'')+'</p>'+val+
-        '<div class="gift-btns"><button type="button" data-pix="'+g.id+'">'+svgPix+'<span>Presentear</span></button></div>'+
+        '<p class="gift-name">'+g.nome+'</p>'+val+btn+
       '</div></div>';
   }).join('');
+
+  /* a foto pode ter subido como .jpg ou .jpeg — tenta as extensões em ordem
+     e, se nenhuma existir, deixa o card com um fundo da paleta */
+  const EXTENSOES=['jpg','jpeg','png','webp','JPG','JPEG','PNG'];
+  grid.querySelectorAll('img[data-base]').forEach(img=>{
+    let i=0;
+    const tentar=()=>{
+      if(i>=EXTENSOES.length){ img.remove(); return; }   // sem foto: fica o fundo da paleta
+      img.src=img.dataset.base+'.'+EXTENSOES[i++];
+    };
+    img.addEventListener('error',tentar);
+    tentar();
+  });
+
   grid.addEventListener('click',e=>{
     const b=e.target.closest('button[data-pix]');
     if(b) abrirPix(Number(b.dataset.pix));

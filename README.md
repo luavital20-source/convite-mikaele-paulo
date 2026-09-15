@@ -52,21 +52,31 @@ whatsapp: '',   // ex.: '5585999998888'  (DDI + DDD + número, só dígitos)
 Preenchendo, aparece a seção **“Você vem?”** com o botão que abre o WhatsApp
 já com a mensagem pronta.
 
-### Lista de presentes
-Pode usar qualquer uma das três formas (ou combinar):
+### Lista de presentes — **falta a chave Pix**
+
+As 20 cotas já estão cadastradas no `index.html`, com nome e valor. O que falta
+é a chave Pix que vai receber:
 
 ```js
-listaLink: '',   // 1) link de uma lista externa (loja, site de presentes)
-pixChave:  '',   // 2) chave Pix exibida na página, com botão de copiar
+pixChave:   '',            // CPF, celular, e-mail ou chave aleatória
+pixTitular: 'Paulo e Mikaele',
+pixBanco:   '',            // opcional, só aparece no rodapé do pop-up
 ```
+
+Enquanto a chave estiver vazia, os cards aparecem com nome e valor, mas **sem o
+botão "Presentear"** — ninguém vê um botão que não funciona. Assim que preencher,
+cada card ganha um Pix **copia e cola** com o valor daquela cota já embutido.
+
+As **fotos das cotas** vão em `img/presentes/` — veja o `LEIA-ME.md` de lá com a
+tabela de qual número é qual presente. A extensão tanto faz (`.jpg`, `.jpeg`,
+`.png`, `.webp`); o que importa é o número com dois dígitos. Card sem foto mostra
+um fundo da paleta — nada quebra.
+
+Se preferir, dá para usar também um link de lista externa:
+
 ```js
-// 3) cotas com valor e Pix "copia e cola" (exige pixChave preenchida)
-const PRESENTES = [
-  { id:1, nome:'Ajuda na lua de mel', sub:'Contribua com a viagem dos sonhos.',
-    foto:'img/presentes/01.jpg', valor:300 },
-];
+listaLink: '',   // aparece como botão "Ver lista de presentes"
 ```
-As fotos das cotas vão em `img/presentes/01.jpg`, `02.jpg`, ...
 
 ---
 
